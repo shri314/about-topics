@@ -1,0 +1,70 @@
+=========================================
+Part A - demo
+=========================================
+
+   static void my_first(int);
+
+   static void my_second(int);
+
+   static void my_third(int);
+
+=========================================
+   void my_first(int) {
+      printf("%s, %s", "MY_first", "var1");
+   }
+
+   void my_second(int) {
+      printf("%s, %s", "MY_second", "var2");
+   }
+
+   void my_third(int) {
+      printf("%s, %s", "MY_third", "var3");
+   }
+
+=========================================
+
+. yank in { to register x in A.h, close
+. paste from register x in A.cpp
+
+. delete static, repeat
+. delete static using visual edit
+
+-------------------------------------------------------------
+. Append to the line using A - instead of moving to the end, and type in:
+  A<BS> {<CR>printf("%s, %s", "my_<C-P>", "var1");<CR>}
+
+. Repeat the same on second function
+. Repeat the same on third function
+. Fix the name of second using - ci", and autocomplete
+. Fix the name of functions using - ci", and autocomplete
+. Fix the var1 in second function using - C-X
+. Fix the var1 in third function using - C-X, C-X
+. Fix the caps on MY - visual edit on my and press ~ - but this fails
+                     - fix using search - c4l"MY_ and repeats
+
+
+Could we do better? - What if this was a more complex change?
+-------------------------------------------------------------
+
+. Start recording in register q
+. Position on the function name
+  yiwA<BS> {<CR>printf("%s, %s", "<ESC>pb~~ea", "var1");<CR>}<ESC>q
+. repeat with @q after going to function name
+. repeat with @@ after going to function name
+
+. Fix the var1 in second function using - C-X
+. Fix the var1 in third function using - C-X, C-X
+
+
+Could we do better - w.r.to - C-X issue, and more positional flexibilty
+-------------------------------------------------------------
+
+. Create text named var0, mark the position in mm
+. Start recording in register q, position on some place in the line with function name
+  ^wyiwA<BS> {<CR>printf("%s, %s", "<ESC>pb~~ea", "<ESC>mn'm<C-A>yiw`npa");<CR>}<ESC>jjq
+
+. repeat with @q
+. repeat with @@
+. go to mark m and delete line
+
+-------------------------------------------------------------

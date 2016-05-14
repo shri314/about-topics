@@ -1,0 +1,14 @@
+Part C: :%!filter
+=================
+:%!xxd
+:%!xxd -r
+:r! ls
+:%!grep -e *.txt
+:%s/^.*$/cp & &.bak/
+:w !bash
+
+
+!!
+==
+ls
+date

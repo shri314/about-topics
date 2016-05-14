@@ -1,0 +1,43 @@
+=========================================
+Part A - demo
+=========================================
+// A.h
+#include <string>
+
+struct A {
+   static int my_first(int);
+
+   float my_second(int) {
+      return 10.1;
+   }
+
+   void my_third(int) {
+   }
+};
+
+=========================================
+// A.h
+#include <string>
+
+struct A {
+   static void my_first(int);
+
+   static void my_second(int);
+
+   static void my_third(int);
+};
+
+=========================================
+
+. write selection to A.h and split that to a window
+. write selection to A.h and split that to a window - in one go using | as sep
+
+. fix static by typing it twice
+. fix static by yank, reposition and paste using p
+. fix static by i, typing and repeating with .
+. fix static by I, typing and repeating with .
+
+. replace int by cw, replay using .
+. replace float by ciw, replay using .
+
+. fix { } by $c%;
