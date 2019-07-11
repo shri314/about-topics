@@ -2,6 +2,18 @@
 - Presentation by Shriram
 - 20th Nov 2017 (last updated)
 		 
+## Contents:
+
+<!-- vim-markdown-toc GitLab -->
+
+* [Docker glossary:](#docker-glossary:)
+* [Building your own image:](#building-your-own-image:)
+* [Creating a client application, and make it talk to the server application:](#creating-a-client-application,-and-make-it-talk-to-the-server-application:)
+* [Working with docker compose - (using declarative syntax)](#working-with-docker-compose-(using-declarative-syntax))
+* [Working with docker swarm, docker stack](#working-with-docker-swarm,-docker-stack)
+
+<!-- vim-markdown-toc -->
+
 1. `docker run hello-world`
 		
         $ docker run hello-world
